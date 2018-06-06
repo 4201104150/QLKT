@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FinalProject
+{
+    public partial class formStar : Form
+    {
+        public formStar()
+        {
+            InitializeComponent();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 fm = new Form1();
+            fm.Show();
+        }
+
+        private void formStar_Load(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+            this.CenterToScreen();
+        }
+        int i = 10;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbChu.Left += i;
+            if (lbChu.Left >= this.Width - lbChu.Width || lbChu.Left <= 0)
+                i = -i;
+        }
+    }
+}

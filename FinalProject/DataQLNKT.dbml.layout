@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataQLNKT">
+  <DataContextMoniker Name="/DataQLNKTDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7e472f2f-be49-4405-9de7-4fa498bdd5b8" absoluteBounds="6.375, 2.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataQLNKTDataContext/CHUQUANLY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c60c9e19-8ab0-4a1a-969e-3194885ad59c" absoluteBounds="6.39, 2.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8e58dd96-11ed-49c8-9035-7a0bcb6b5ce8" absoluteBounds="0.75, 3, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/DataQLNKTDataContext/KHUTRO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9dcbb73e-1bfb-4092-8c38-a702e62f9a3c" absoluteBounds="0.765, 3.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="44b61e39-c2d4-4830-a643-3be06624806a" absoluteBounds="3.25, 3.125, 2, 2.347801106770834">
+      <DataClassMoniker Name="/DataQLNKTDataContext/NGUOIQUANLY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0a16c3e-f779-4421-bd3f-97c8cde7f32b" absoluteBounds="3.265, 3.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="167fcc25-50d6-4d9b-9e1d-03cf265d82a2" absoluteBounds="4, 0.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataQLNKTDataContext/NGUOITHUE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db2e78e6-01bb-4353-8ea3-efa533daedc6" absoluteBounds="4.015, 1.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e28e7dbb-7f9d-4727-afcc-0b4a849691b3" absoluteBounds="1.625, 0.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataQLNKTDataContext/PHONGTRO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="872198de-5b8b-411c-b33f-2e4f2eecc786" absoluteBounds="1.6400000000000001, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.75564697265625); (3.25 : 3.75564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLNKTDataContext/KHUTRO/KHUTRO_NGUOIQUANLY" />
+      <nodes>
+        <classShapeMoniker Id="8e58dd96-11ed-49c8-9035-7a0bcb6b5ce8" />
+        <classShapeMoniker Id="44b61e39-c2d4-4830-a643-3be06624806a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.625 : 1.64024983723958); (4 : 1.64024983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLNKTDataContext/PHONGTRO/PHONGTRO_NGUOITHUE" />
+      <nodes>
+        <classShapeMoniker Id="e28e7dbb-7f9d-4727-afcc-0b4a849691b3" />
+        <classShapeMoniker Id="167fcc25-50d6-4d9b-9e1d-03cf265d82a2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.1875 : 3); (2.1875 : 2.65549967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLNKTDataContext/KHUTRO/KHUTRO_PHONGTRO" />
+      <nodes>
+        <classShapeMoniker Id="8e58dd96-11ed-49c8-9035-7a0bcb6b5ce8" />
+        <classShapeMoniker Id="e28e7dbb-7f9d-4727-afcc-0b4a849691b3" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

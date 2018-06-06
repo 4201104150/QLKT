@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyNhieuDayTro" Class="DataQLNKTDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=QuanLyNhieuDayTro;Integrated Security=True" SettingsObjectName="FinalProject.Properties.Settings" SettingsPropertyName="QuanLyNhieuDayTroConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CHUQUANLY" Member="CHUQUANLies">
+    <Type Name="CHUQUANLY">
+      <Column Name="IDCHUQUANLY" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PASSBOSS" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYSINH" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CMND" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHUTRO" Member="KHUTROs">
+    <Type Name="KHUTRO">
+      <Column Name="IDKHUTRO" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENKHUTRO" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="KHUTRO_NGUOIQUANLY" Member="NGUOIQUANLies" ThisKey="IDKHUTRO" OtherKey="IDKHUTRO" Type="NGUOIQUANLY" />
+      <Association Name="KHUTRO_PHONGTRO" Member="PHONGTROs" ThisKey="IDKHUTRO" OtherKey="IDKHUTRO" Type="PHONGTRO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NGUOIQUANLY" Member="NGUOIQUANLies">
+    <Type Name="NGUOIQUANLY">
+      <Column Name="IDNGUOIQUANLY" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PASSNGQL" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYSINH" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CMND" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="IDKHUTRO" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="KHUTRO_NGUOIQUANLY" Member="KHUTRO" ThisKey="IDKHUTRO" OtherKey="IDKHUTRO" Type="KHUTRO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NGUOITHUE" Member="NGUOITHUEs">
+    <Type Name="NGUOITHUE">
+      <Column Name="IDNGUOITHUE" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYSINH" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CMND" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="IDPHONG" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="PHONGTRO_NGUOITHUE" Member="PHONGTRO" ThisKey="IDPHONG" OtherKey="IDPHONGTRO" Type="PHONGTRO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHONGTRO" Member="PHONGTROs">
+    <Type Name="PHONGTRO">
+      <Column Name="IDPHONGTRO" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CHATLUONGPHONG" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="GIATIEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DIENTICH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TINHTRANGPHONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SONGUOITOIDA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDKHUTRO" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="PHONGTRO_NGUOITHUE" Member="NGUOITHUEs" ThisKey="IDPHONGTRO" OtherKey="IDPHONG" Type="NGUOITHUE" />
+      <Association Name="KHUTRO_PHONGTRO" Member="KHUTRO" ThisKey="IDKHUTRO" OtherKey="IDKHUTRO" Type="KHUTRO" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
